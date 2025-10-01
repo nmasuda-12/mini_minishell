@@ -1,0 +1,34 @@
+ 	echo （-n オプションの挙動を含む）
+ 	cd　（相対パス、または絶対パスのみで動作する）
+ 	pwd　（オプションの処理を含まない）
+ 	export　（オプションの処理を含まない）
+ 	unset　（オプションの処理を含まない）
+ 	env　（オプションと引数の処理を含まない）
+ 	exit　（オプションの処理を含まない）
+
+
+
+基本処理
+ 	echo （-n オプションの挙動を含む）
+ 	cd　（相対パス、または絶対パスのみで動作する）
+	pwd　（オプションの処理を含まない）
+ 	export　（オプションの処理を含まない）
+ 	unset　（オプションの処理を含まない）
+ 	env　（オプションと引数の処理を含まない）
+ 	exit　（オプションの処理を含まない）
+
+
+
+
+    場合による　引数がある場合
+    if(line[CMD + 1])
+        search_error("Argument ",line[CMD+1]," is not a valid integer");
+    
+    必須　数が多すぎる場合
+	if (line[CMD + 1])
+		arg_error("Too many args for exit command");
+
+
+// unset ２つ以上消す場合
+
+exportみたいな感じでunsetの方もまろっくする
