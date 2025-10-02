@@ -12,43 +12,30 @@
 
 #include "bildin.h"
 
-void	arg_check(void)
+static void	echo_print(char **line)
 {
+	int	i;
+
+	i = 1;
+	while (line[CMD + i])
+	{
+		printf("%s", line[CMD + i]);
+		i++;
+	}
 }
 
 void	c_echo(char **line)
 {
-	int	i;
-	int j;
-
-	i = 2;
-	if (!line[i])
-		arg_error("echo");
-	if (!line[i + 1] && !ft_strncmp(line[i], "-n", 3))
-		arg_error("error -n");
-	if (!ft_strncmp(line[i], "-n", 3))
+	if (!line[CMD + 1])
+		printf("\n");
+	else if (!ft_strncmp(line[CMD + 1], "-n", 3))
 	{
-		i++;
-		while (line[i])
-		{
-			printf("%s", line[i]);
-			i++;
-		}
+		line++;
+		echo_print(line);
 	}
 	else
 	{
-		while(line[i])
-		{
-			j = 0;
-			if(line[i][j] == ' ')
-				printf(" ");
-			while (line[i][j])
-			{
-				printf("%c", line[i][j]);
-				j++;
-			}
-			i++;
-		}
-			printf("\n");
+		echo_print(line);
+		printf("\n");
 	}
 }

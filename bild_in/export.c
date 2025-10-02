@@ -6,7 +6,7 @@
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 21:33:37 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/09/30 21:55:31 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/10/02 17:49:52 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	print_ev(char **new_ev)
 	}
 }
 
-void	c_export(char **line, char **ev)
+int	c_export(char **line, char **ev)
 {
 	char	**new_ev;
 	int		l;
@@ -56,6 +56,6 @@ void	c_export(char **line, char **ev)
 		arg_error("仮置きしてるmallocエラー"); // still reachable に気をつけるんだ
 	}
 	new_ev[n_l] = line[CMD + 1];
-	print_ev(new_ev);
+	// print_ev(new_ev);
 	// return (new_ev);
 }
